@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px){
+  h1 {
+    font-size: 1.5em;
+  }
+
+}
+
+/*-------------AFFECTS ALL PAGE--------------------------*/
+/*bg = background butts= button clr = color
+DM = Dark mode LM = Light mode
+!panelsDMclr affects navbar colors except toggle!
+*/
+:root{
+  --ff: 'Montserrat';
+  --trans: .5s ease-in-out;
+  --pagebg: linear-gradient(180deg, #CCE6FF, rgb(204, 204, 255));
+  --pageDMbg: #333333;
+  --titleclr: #FFF;
+  --navbg: linear-gradient(to right, #5F7CDB , #DEE2EC);
+  --navbuttsbg: inherit;
+  --navbuttsclr: #000; /*#DFDFE5*/
+  --panelsLM: #FFF;
+  --panelsDM: #434343;
+  --panelsDMclr: #B5B5B5;
+  --headingDMclr: #3694FF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--pagebg); /*#CCFFFF*/
+}
+
+a:visited {
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+*{
+  transition: var(--trans);
+
+}
+
+#page{
+  font-family: var(--ff);
+  grid-row: 1 /4;
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 6em repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+}
+
+/*---DarkMode---*/
+/*DarkMode Colors from https://codepen.io/designcourse/pen/OGVZjr*/
+
+.dark-mode {
+  transition: var(--trans);
+  background: var(--pageDMbg) !important;
+}
+
+.dark-mode-panel {
+  transition: var(--trans);
+  background: var(--panelsDM) !important;
+  color: var(--panelsDMclr);
+}
+
+.dark-mode-panel h2 {
+  transition: var(--trans);
+  color: var(--headingDMclr);
+}
+
+.dark-mode-panel h3 {
+  transition: var(--trans);
+  color: var(--headingDMclr) !important;
+}
+
+.dark-mode-panel h4 {
+  transition: var(--trans);
+  color: var(--headingDMclr);
+}
+
+#nightMode {
+  overflow: hidden;
+  background: var(--panelsDM);
+  color: var(--navbuttsclr);
+  border: 2px solid #28284A;
+  cursor: pointer;
+}
+
+.light-mode{
+  background: var(--navbg) !important;
+  color: #fff !important;
+}
+
+/*---------------------------NAVBAR------------------------*/
+
+#navbar {
+  display: grid;
+  grid-column: 1/4;
+  grid-row: 1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+  background: var(--navbg);
+}
+
+#navbar button:hover{
+  background: #28284A;
+  color: #fff;
+}
+
+#navbar h1{
+  grid-column: 1/4;
+  grid-row: 1;
+  margin:0;
+  padding-left: 1em;
+  color: var(--titleclr);
+}
+
+#navbar button{
+  overflow: hidden;
+  background: var(--navbuttsbg);
+  width: 100%;
+  height: 1.5em;
+  color: var(--navbuttsclr);
+  border:2px solid #28284A;
+  font-size:22px;
+  cursor:pointer;
+}
+
+#links{
+  display:grid;
+  grid-column: 1/4;
+  grid-row: 1;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1.4em;
+  grid-gap:1em;
+  align-self: flex-end;
+  padding: 0 0 1em 1em;
+  text-align: center;
+  line-height: 1em;
+}
+
+/*---------Content--------*/
+
+#resume {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2 / 4;
+  grid-gap: 1em;
+  padding-top: 1em;
+}
+
+#resume div {
+  background: var(--panelsLM);
+  box-shadow: 0 0 3px 0 #aaa;
+  padding: 1em;
+}
+
+
+/*-------Pictures-------------*/
+.uic{
+  width: 20%;
+  height: auto;
+  float: right;
+}
+
+.ysi{
+  width: 37%;
+  height: auto;
+  float: right;
+}
+
+.mef{
+    width: 20%;
+  height: auto;
+  float: right;
+}
+
+.sma{
+  width: 37%;
+  height: auto;
+  float: right;
+}
