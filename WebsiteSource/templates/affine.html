@@ -1,0 +1,38 @@
+<html>
+<form method="POST">
+    <h1 align="center">Affine Cipher</h1>
+<div align="center">
+    <p>Encryption is done by mapping your message to a number using ASCII. It stores it as x and solves ax+b mod 94.</p>
+    <p>One way I use this is to convert multipleWordsLikeThis and pass them to the encrypt form below and use the result as a password. Though I wouldn't recommend putting your passwords on unkown websites like this. </p>
+    <p>It may be that you choose a number "a" such that the gcd(a,94) doesn't equal 1. Just choose another number for a. At that point. </p>
+    <p>Write message here. Special characters such as *!$!@# etc. are allowed:
+            <input type="text" name="etext">
+    </p>
+    <p>Write number a here: 
+            <input type="text" name="ea" value = {{eaInt}}>
+    </p>
+    <p>Write number b here: 
+            <input type="text" name="eb" value = {{ebInt}}>
+    </p>
+    <p>Encryption is: {{Result}}</p>
+    
+    <p><input type="submit" name="butt" value="Encrypt"></p>
+    
+    <p>Decryption is done by mapping your message to a number using ASCII. And finds the inverse of the encryption function.</p>
+    
+    <p>Write encrypted message here:
+            <input type="text" name="dtext">
+    </p>
+    <p>Write number a here: 
+            <input type="text" name="da" value = {{daInt}}>
+    </p>
+    <p>Write number b here: 
+            <input type="text" name="db" value = {{dbInt}}>
+    </p>
+    <p>Decryption is: {{dResult}}</p>
+    
+    <p><input type="submit" name="butt" value="Decrypt"></p>
+    
+</div>
+</form>
+</htm

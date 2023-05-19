@@ -1,0 +1,86 @@
+<html>
+<form method="POST">
+    <h1 align="center">RSA</h1>
+<div class = "instructions" align="center">
+    <p>How it works</p>
+    <p>1. Choose secret primes p and q and compute n = pq.</p>
+    <p>2. Choose e with gcd(e, (p — l)(q - 1)) = 1.</p>
+    <p>3. Compute d with de = 1 (mod (p - l)(q — 1)).</p>
+    <p>4. Make n and e public, and keep p, q, d secret.</p>
+    <p>5. Another encrypts m^e (mod n) = c and sends c to desired party.</p>
+    <p>6.  Computig c^d (mod n) results in the decrypted message m!</p>
+   <p> p,q, and e can all be primes to simplify the process, but make sure they're all chosen at random!'</p>
+</div> 
+<br>
+<div align="center">
+    <p>Submit p,q, and e below to get the variable d. Do not share d! <a href="http://compoasso.free.fr/primelistweb/page/prime/liste_online_en.php">Click here to get a list of primes</a> </p>
+    <p>Try these numbers p = 885320963 q = 238855417 e = 9007</p>
+
+    <p>Write prime p here: 
+            <input type="text" name="p" value={{primeOne}}>
+    </p>
+    <p>Write prime q here: 
+            <input type="text" name="q" value={{primeTwo}}>
+    </p>
+    <p>Write exponent e here: 
+            <input type="text" name="relative" value={{relativePrime}}>
+    </p>
+    <p>This is your secret d, save it for decryption: {{relativeD}} 
+    </p>
+    
+    <p>Share this number n and exponent e!: {{checkN}}</p>
+    
+    <p><input type="submit" name="butt" value="Check"></p>
+    
+</div>
+    <p align="center">If encrypting use the left side if decrypting use the right side</p>
+
+<div align="center" class="container">
+    <div class="column">
+
+        <p>Write message here:
+            <input type="text" name="m" value={{message}}>
+        </p>
+
+        <p> Write the exponent e here:
+         <input type="text" name="e" value={{exponent}}>
+        </p>
+        
+        <p> Write mod n here:
+         <input type="text" name='n' value={{modN}}>
+        </p>
+
+        <p>Copy this and send back: {{encrypted}}</p>
+        <input type="submit" name="butt" value="Encrypt">
+    </div>
+
+    <div class="column">
+        <p> Write integers here: (like this 3532,3268,2134)
+            <input type="text" name="nums" value={{numbers}}>
+        </p>
+        <p> Write the exponent d here:
+            <input type="text" name='de' value={{Dexponent}}>
+        </p>
+        
+        <p> Write mod n here:
+         <input type="text" name='dn' value={{modN}}>
+        </p>
+        <p> Output: {{decrypted}}</p>
+        <input type="submit" name="butt" value="Decrypt">
+    </div>
+</div>
+</form>
+
+
+<style>
+.container{
+    display:flex;
+}
+.column{
+    flex:30%;
+}
+.instructions{
+    font-size: 12px;
+}
+</style>
+</html>

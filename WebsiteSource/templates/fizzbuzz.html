@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fizzbuzz</title>
+</head>
+<style type="text/css">
+	.anim {
+	animation-name: colour;
+	animation-duration: 10s;
+	/*animation-fill-mode: forwards
+	(keeps last color)*/
+	animation-iteration-count: 1;
+}
+
+@keyframes colour {
+	0% {
+		transform: rotate(0deg);
+		left: 0%;
+		opacity: 1;
+		animation-timing-function: ease-out; /*linear
+		or cubic-bezier(x1, y1, x2, y2)
+		   cubic-bezier(0,0,0.58,1) simulates ease-out
+		   y value can be > 1*/
+	}
+
+	33%{
+		left: 50%;
+		opacity: .66
+		animation-timing-function: linear;
+	}
+
+	66%{
+		left: -50%;
+		opacity: .33
+	}
+	100% {
+		transform: rotate(2880deg);
+		left: 0px;
+		opacity: 1;
+	}
+}
+</style>
+
+<body>
+	<div id="test">
+		<h1 align="center">fizzbuzz</h1>
+
+		<p align="center">Welcome to fizzbuzz! The rules are simple, type in the box below the number one and start your counting journey.
+		The computer will play along with you! If your number is divisible by 3 you type fizz, if divisible by 5 you type buzz, and fizzbuzz if its divisible by 15. 
+		Reach fizzbuzz for a spinning surprise! The first box is your input. The second is the computer's and the last your results. If you get something wrong, don't worry it automatically resets! Just type 1 in the first box and Enjoy! Please press the button at the bottom to submit your answers. Thank you! (example: 1, 2, fizz, 4, buzz and so on)</p>
+
+		<div align="center">
+			<input type="string" id="answer" value="Put your Answer Here">
+			<input type="sring" value="Computer Answer" id="cAnswer">
+			<input type="string" id="interact" value="Hello">
+		</div>
+
+		<div align="center">
+			<br>
+			<button onclick="checkAnswer()">Submit</button>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	var counter = 1;
+
+	function checkAnswer(){
+		element = document.getElementById("test");
+		a = document.getElementById("answer").value;
+		a = a.toLowerCase()
+		finalAnswer = calculate(counter);
+
+		//Script goes every second turn.
+		if (counter%2 == 0) {
+			document.getElementById("cAnswer").value = finalAnswer;
+			document.getElementById("answer").value = ""
+
+		} else {
+			checkNum = Number(a); //Checks wether input is a string or int
+			if (isNaN(checkNum) == true){
+				checkNum = a;
+			}
+
+			if (checkNum==finalAnswer){
+				document.getElementById("interact").value = "Good Job";
+				if (counter%15 == 0){
+					element.classList.add("anim");
+				} 
+				counter +=1;
+				checkAnswer();
+				return;
+			} else {
+				document.getElementById("interact").value = "Sorry, answer is: " + finalAnswer;
+				counter = 0;
+			}
+		}
+		counter += 1;
+	}
+
+	function calculate(cntr){
+		var ans = '';
+		if (counter % 15 == 0) {
+				ans = "fizzbuzz";
+			} else if (counter % 5 == 0) {
+				ans = "buzz";
+			} else if (counter % 3 == 0) {
+				ans = "fizz";
+			} else {
+				ans = counter;
+			}
+			return ans;
+	}
+
+</script>
+</html>

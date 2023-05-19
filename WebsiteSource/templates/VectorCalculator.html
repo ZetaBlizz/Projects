@@ -1,0 +1,38 @@
+<html>
+<form method="POST">
+    <h1 align="center">Vector Manipulation</h1>
+<div align="center">
+    <p>This calculator uses python OOP to convert two points to a vector do these following Vector functions:</p>
+    <p>Matrix product, characteristic polynomial, inverse, trace, determinant, addition, subtraction, and multiplication.</p>
+    <p>For all arithmethic operations it will asume vector 1is the one being manipulated. (i.e. v1+v2, v1-v2, etc.)</p>
+    
+    <p>Replace the coordinates with your desired values for the first Vector:
+            <input type="text" name="first" value="x1,y1">
+            <input type="text" name="second" value="x2,y2">
+    </p>
+    
+    <p>Replace the coordinates with your desired values for the second Vector:
+            <input type="text" name="third" value="x1,y1">
+            <input type="text" name="fourth" value="x2,y2">
+    </p>
+    
+    <p><input type="submit" name="butt" value="Submit"></p>
+    
+    <p>Points: {{vectorPoints}}</p>
+    <p>Matrix product: v1:{{product1}}</p> 
+    <p>v2:{{product2}}</p>
+    <p>Characteristic Polynomial: v1:{{polynomial1}}</p> 
+    <p>v2:{{polynomial2}}</p>
+    <p>Inverse: v1:{{inverse1}}</p> 
+    <p>v2:{{inverse2}}</p>
+    <p>Trace: v1:{{trace1}}</p> 
+    <p>v2:{{trace2}}</p>
+    <p>Determinant: v1:{{det1}}</p> 
+    <p>v2:{{det2}}</p>
+    <p>Addition: {{add}}</p>
+    <p>Subtraction: {{sub}}</p>
+    <!--<p>Multiplication: {{mult}}</p>-->
+    
+</div>
+</form>
+</html>

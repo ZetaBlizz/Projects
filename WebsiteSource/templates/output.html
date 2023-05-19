@@ -1,0 +1,43 @@
+<html>
+<form method="POST">
+  <h1 align="center">Distance Converter</h1>
+  <p align="center"><input type="text" name="text1" value={{miles}}>Miles</p>
+
+  <div align="center" class="container">
+
+    <div class="column">
+      <p>
+        <input type="text" name="text2" value={{yards}}>yr<input type="submit" name="butt" value="Convert IS">
+      </p>
+      <p>
+        <input type="text" name="text3" value={{feet}}>ft<input type="submit" name="butt" value="Clear IS">
+      </p>
+      <p><input type="text" name="text4" value={{inches}}>in</p>
+    </div>
+
+    <div class="column">
+      <p>
+        <input type="text" name="text5" value={{kilometers}}>km<input type="submit" name="butt" value="Convert ME">
+      </p>
+      <p>
+        <input type="text" name='text6' value={{meters}}>m<input type="submit" name="butt" value="Clear ME">
+      </p>
+      <p>
+        <input type="text" name="text7" value={{centimeters}}>cm
+      </p>
+    </div>
+  </div>
+
+
+  <p align="center"><input type="submit" name="butt" value="Clear ALL"></p>
+</form>
+<style>
+  .container{
+      display:flex;
+  }
+  /*I don't understand why the input boxes aren't inline*/
+  .column{
+    flex:30%;
+  }
+</style>
+</html>

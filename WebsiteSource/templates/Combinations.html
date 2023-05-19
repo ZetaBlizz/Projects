@@ -1,0 +1,22 @@
+<html>
+<form method="POST">
+    <h1 align="center">Combinations</h1>
+<div align="center">
+    <p>This calculator just handles (ax+by)^n or (ax-by)^n</p>
+    <p>In other words the variable a can't be negative and nested equations like ((ax+by)+(cx+dy))^n won't work </p>
+    <p>Try writting (27x+892y)^100. Numbers past n =1000 is possible and fast, but it may not fit on this page...</p>
+    
+    <p>Write your equation here like this 2x+4y:
+            <input type="text" name="equation" value={{expression}}>
+    </p>
+    <p>Write the exponent n here: 
+            <input type="text" name="exponent" value={{n}}>
+    </p>
+    
+    <p>Result: {{Result}}</p>
+    
+    <p><input type="submit" name="butt" value="Submit"></p>
+    
+</div>
+</form>
+</html>
